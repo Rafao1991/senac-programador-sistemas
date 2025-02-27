@@ -12,12 +12,21 @@ namespace Login
             string usuario = textBoxUsuario.Text;
             string senha = textBoxSenha.Text;
 
-            if (usuario == null || usuario == "")
+            if (string.IsNullOrWhiteSpace(usuario))
             {
                 labelResultado.Text = "Usuario eh obrigatorio!!!";
                 labelResultado.ForeColor = Color.Red;
-            } 
-            else if (usuario == "rafael.sousa" && senha == "12345")
+                return;
+            }
+            
+            if (senha == null || senha == "")
+            {
+                labelResultado.Text = "Senha eh obrigatoria!!!";
+                labelResultado.ForeColor = Color.Red;
+                return;
+            }
+            
+            if (usuario == "rafael.sousa" && senha == "12345")
             {
                 labelResultado.Text = "Autenticado com sucesso!";
                 labelResultado.ForeColor = Color.Green;
