@@ -34,7 +34,7 @@
             label1 = new Label();
             label2 = new Label();
             labelResultado = new Label();
-            label3 = new Label();
+            labelNovoUsuario = new Label();
             label4 = new Label();
             label5 = new Label();
             buttonCadastrar = new Button();
@@ -96,14 +96,14 @@
             labelResultado.Size = new Size(0, 25);
             labelResultado.TabIndex = 5;
             // 
-            // label3
+            // labelNovoUsuario
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14F);
-            label3.Location = new Point(389, 184);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 25);
-            label3.TabIndex = 11;
+            labelNovoUsuario.AutoSize = true;
+            labelNovoUsuario.Font = new Font("Segoe UI", 14F);
+            labelNovoUsuario.Location = new Point(389, 184);
+            labelNovoUsuario.Name = "labelNovoUsuario";
+            labelNovoUsuario.Size = new Size(0, 25);
+            labelNovoUsuario.TabIndex = 11;
             // 
             // label4
             // 
@@ -131,6 +131,7 @@
             buttonCadastrar.TabIndex = 8;
             buttonCadastrar.Text = "cadastrar";
             buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
             // 
             // textBoxNovaSenha
             // 
@@ -186,7 +187,7 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(label3);
+            Controls.Add(labelNovoUsuario);
             Controls.Add(label4);
             Controls.Add(label5);
             Controls.Add(buttonCadastrar);
@@ -213,7 +214,7 @@
         private Label label1;
         private Label label2;
         private Label labelResultado;
-        private Label label3;
+        private Label labelNovoUsuario;
         private Label label4;
         private Label label5;
         private Button buttonCadastrar;

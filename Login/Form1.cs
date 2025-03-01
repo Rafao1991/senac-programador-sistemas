@@ -23,7 +23,7 @@ namespace Login
                 return;
             }
 
-            if (senha == null || senha == "")
+            if (string.IsNullOrWhiteSpace(senha))
             {
                 labelResultado.Text = "Senha eh obrigatoria!!!";
                 labelResultado.ForeColor = Color.Red;
@@ -48,6 +48,44 @@ namespace Login
             {
                 labelResultado.Text = "Usuario ou Senha incorretos...";
                 labelResultado.ForeColor = Color.Red;
+            }
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            string novoUsuario = textBoxNovoUsuario.Text;
+            string novaSenha = textBoxNovaSenha.Text;
+
+            if (string.IsNullOrWhiteSpace(novoUsuario))
+            {
+                labelNovoUsuario.Text = "Usuario eh obrigatorio!!!";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(novaSenha))
+            {
+                labelNovoUsuario.Text = "Senha eh obrigatoria!!!";
+                return;
+            }
+
+            bool usuarioEncontrado = false;
+            for (int i = 0; i < listaUsuarios.Count; i++)
+            {
+                if (novoUsuario == listaUsuarios[i])
+                {
+                    usuarioEncontrado = true;
+                }
+            }
+
+            if (!usuarioEncontrado)
+            {
+                listaUsuarios.Add(novoUsuario);
+                listaSenhas.Add(novaSenha);
+                labelNovoUsuario.Text = "Usuário cadastrado com sucesso!";
+            }
+            else
+            {
+                labelNovoUsuario.Text = "Já existe um usuário cadastrado";
             }
         }
     }
