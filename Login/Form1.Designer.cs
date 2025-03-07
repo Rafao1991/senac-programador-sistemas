@@ -91,7 +91,7 @@
             // 
             labelResultado.AutoSize = true;
             labelResultado.Font = new Font("Segoe UI", 14F);
-            labelResultado.Location = new Point(43, 184);
+            labelResultado.Location = new Point(12, 217);
             labelResultado.Name = "labelResultado";
             labelResultado.Size = new Size(0, 25);
             labelResultado.TabIndex = 5;
