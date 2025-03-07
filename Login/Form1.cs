@@ -4,11 +4,6 @@ namespace Login
 {
     public partial class FormLogin : Form
     {
-        List<string> alfabetoMaiusculo = new List<string>() { "A", "B", "C", "D", "E" };
-        List<string> alfabetoMinusculo = new List<string>() { "a", "b", "c", "d", "e" };
-        List<char> numeros = new List<char>() { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-        List<char> especiais = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
-
         List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vitar", "sukuna.silva" };
         List<string> listaSenhas = new List<string>() { "Brun@123", "12345Abc!", "Sete7Sete!" };
 
@@ -45,16 +40,17 @@ namespace Login
                 }
             }
 
-            if (posicaoUsuarioEncontrado > -1 && senha == listaSenhas[posicaoUsuarioEncontrado])
-            {
-                labelResultado.Text = "Autenticado com sucesso!";
-                labelResultado.ForeColor = Color.Green;
-            }
-            else
+            if (posicaoUsuarioEncontrado == -1 || senha != listaSenhas[posicaoUsuarioEncontrado])
             {
                 labelResultado.Text = "Usuario ou Senha incorretos...";
                 labelResultado.ForeColor = Color.Red;
+                return;
             }
+
+            labelResultado.Text = "Autenticado com sucesso!";
+            labelResultado.ForeColor = Color.Green;
+            textBoxUsuario.Clear();
+            textBoxSenha.Clear();
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
@@ -92,19 +88,19 @@ namespace Login
                 return;
             }
 
-            if (!novaSenha.Any(char.IsDigit))
+            if (!novaSenha.Any(char.IsNumber))
             {
                 labelResultado.Text = "A senha deve ter pelo menos um numero";
                 return;
             }
 
-            if (!novaSenha.Any(char.IsPunctuation))
+            if (!novaSenha.Any(char.IsPunctuation) && !novaSenha.Any(char.IsSymbol) && !novaSenha.Contains('@'))
             {
                 labelResultado.Text = "A senha deve ter pelo menos um caracter especial";
                 return;
             }
 
-            if (novaSenha.Contains(' '))
+            if (novaSenha.Any(char.IsWhiteSpace))
             {
                 labelResultado.Text = "A senha nao deve ter espacos em branco";
                 return;
