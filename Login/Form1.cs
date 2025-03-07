@@ -31,14 +31,7 @@ namespace Login
                 return;
             }
 
-            int posicaoUsuarioEncontrado = -1;
-            for (int i = 0; i < listaUsuarios.Count; i++)
-            {
-                if (usuarioBuscado == listaUsuarios[i])
-                {
-                    posicaoUsuarioEncontrado = i;
-                }
-            }
+            int posicaoUsuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
 
             if (posicaoUsuarioEncontrado == -1 || senha != listaSenhas[posicaoUsuarioEncontrado])
             {
