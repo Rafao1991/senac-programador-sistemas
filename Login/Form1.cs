@@ -4,12 +4,14 @@ namespace Login
 {
     public partial class FormLogin : Form
     {
-        List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vitar", "sukuna.silva" };
-        List<string> listaSenhas = new List<string>() { "Brun@123", "12345Abc!", "Sete7Sete!" };
+        List<Usuario> usuarios = new List<Usuario>();
 
         public FormLogin()
         {
             InitializeComponent();
+            usuarios.Add(new Usuario() { Email = "neymar.jr@email.com", Senha = "Brun@123" });
+            usuarios.Add(new Usuario() { Email = "pablo.vitar@email.com", Senha = "12345Abc!" });
+            usuarios.Add(new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" });
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
@@ -31,9 +33,15 @@ namespace Login
                 return;
             }
 
-            int posicaoUsuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
+            bool autenticado = false;
+            for (int i = 0; i < usuarios.Count; i++) {
+                if (usuarios[i].Email == usuarioBuscado && usuarios[i].Senha == senha)
+                {
+                    autenticado = true;
+                }
+            }
 
-            if (posicaoUsuarioEncontrado == -1 || senha != listaSenhas[posicaoUsuarioEncontrado])
+            if (!autenticado)
             {
                 labelResultado.Text = "Usuario ou Senha incorretos...";
                 labelResultado.ForeColor = Color.Red;
@@ -99,14 +107,22 @@ namespace Login
                 return;
             }
 
-            if (listaUsuarios.Contains(novoUsuario))
+            bool encontrado = false;
+            for (int i = 0; i < usuarios.Count; i++)
+            {
+                if (usuarios[i].Email == novoUsuario && usuarios[i].Senha == novaSenha)
+                {
+                    encontrado = true;
+                }
+            }
+
+            if (encontrado)
             {
                 labelResultado.Text = "Já existe um usuário cadastrado";
                 return;
             }
 
-            listaUsuarios.Add(novoUsuario);
-            listaSenhas.Add(novaSenha);
+            usuarios.Add(new Usuario() { Email = novoUsuario, Senha = novaSenha });
             labelResultado.Text = "Usuário cadastrado com sucesso!";
             textBoxNovoUsuario.Clear();
             textBoxNovaSenha.Clear();
