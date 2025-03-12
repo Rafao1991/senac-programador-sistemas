@@ -39,6 +39,7 @@
             radioButtonSubtracao = new RadioButton();
             radioButtonMultiplicacao = new RadioButton();
             radioButtonDivisao = new RadioButton();
+            button1 = new Button();
             SuspendLayout();
             // 
             // textBoxNro1
@@ -47,6 +48,7 @@
             textBoxNro1.Name = "textBoxNro1";
             textBoxNro1.Size = new Size(50, 23);
             textBoxNro1.TabIndex = 0;
+            textBoxNro1.Visible = false;
             // 
             // textBoxNro2
             // 
@@ -150,11 +152,22 @@
             radioButtonDivisao.UseVisualStyleBackColor = true;
             radioButtonDivisao.CheckedChanged += radioButtonDivisao_CheckedChanged;
             // 
+            // button1
+            // 
+            button1.Location = new Point(553, 102);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 11;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            Controls.Add(button1);
             Controls.Add(radioButtonDivisao);
             Controls.Add(radioButtonMultiplicacao);
             Controls.Add(radioButtonSubtracao);
@@ -187,5 +200,6 @@
         private RadioButton radioButtonSubtracao;
         private RadioButton radioButtonMultiplicacao;
         private RadioButton radioButtonDivisao;
+        private Button button1;
     }
 }

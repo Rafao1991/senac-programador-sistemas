@@ -15,3 +15,4 @@ C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\Calculadora\ob
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.pdb
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.genruntimeconfig.cache
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\ref\Calculadora.dll
+C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.NovoForm.resources

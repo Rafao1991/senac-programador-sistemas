@@ -104,6 +104,7 @@ namespace Calculadora
 
         private void radioButtonSoma_CheckedChanged(object sender, EventArgs e)
         {
+            textBoxNro1.Visible = true;
             labelOperacao.Text = "+";
         }
 
@@ -120,6 +121,19 @@ namespace Calculadora
         private void radioButtonDivisao_CheckedChanged(object sender, EventArgs e)
         {
             labelOperacao.Text = "/";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NovoForm novoForm = new NovoForm();
+            novoForm.Show();
+
+            this.Hide();
         }
     }
 }
