@@ -29,51 +29,58 @@
         private void InitializeComponent()
         {
             groupBoxRetangulo = new GroupBox();
-            buttonCalcular = new Button();
-            radioButtonVolume = new RadioButton();
-            radioButtonArea = new RadioButton();
-            radioButtonPerimetro = new RadioButton();
-            textBoxResultado = new TextBox();
+            buttonCalcularRetangulo = new Button();
+            radioButtonVolumeRetangulo = new RadioButton();
+            radioButtonAreaRetangulo = new RadioButton();
+            radioButtonPerimetroRetangulo = new RadioButton();
+            textBoxResultadoRetangulo = new TextBox();
             labelResultado = new Label();
             label3 = new Label();
             labelAltura = new Label();
             labelLargura = new Label();
-            textBoxComprimento = new TextBox();
-            textBoxAltura = new TextBox();
-            textBoxLargura = new TextBox();
+            textBoxComprimentoRetangulo = new TextBox();
+            textBoxAlturaRetangulo = new TextBox();
+            textBoxLarguraRetangulo = new TextBox();
+            groupBoxQuadrado = new GroupBox();
+            buttonCalcularQuadrado = new Button();
+            radioButtonVolumeQuadrado = new RadioButton();
+            radioButtonAreaQuadrado = new RadioButton();
+            radioButtonPerimetroQuadrado = new RadioButton();
+            textBoxResultadoQuadrado = new TextBox();
+            label1 = new Label();
+            label5 = new Label();
+            textBoxLadoQuadrado = new TextBox();
             comboBoxOpcao = new ComboBox();
             labelErro = new Label();
-            groupBoxQuadrado = new GroupBox();
-            button1 = new Button();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            groupBoxCirculo = new GroupBox();
+            textBoxResultadoCirculo = new TextBox();
+            labelResultadoCirculo = new Label();
+            buttonCalcularCirculo = new Button();
+            radioButtonVolume = new RadioButton();
+            radioButtonArea = new RadioButton();
+            radioButtonPerimetro = new RadioButton();
+            radioButtonDiametro = new RadioButton();
+            label8 = new Label();
+            textBoxRaio = new TextBox();
             groupBoxRetangulo.SuspendLayout();
             groupBoxQuadrado.SuspendLayout();
+            groupBoxCirculo.SuspendLayout();
             SuspendLayout();
             // 
             // groupBoxRetangulo
             // 
-            groupBoxRetangulo.Controls.Add(buttonCalcular);
-            groupBoxRetangulo.Controls.Add(radioButtonVolume);
-            groupBoxRetangulo.Controls.Add(radioButtonArea);
-            groupBoxRetangulo.Controls.Add(radioButtonPerimetro);
-            groupBoxRetangulo.Controls.Add(textBoxResultado);
+            groupBoxRetangulo.Controls.Add(buttonCalcularRetangulo);
+            groupBoxRetangulo.Controls.Add(radioButtonVolumeRetangulo);
+            groupBoxRetangulo.Controls.Add(radioButtonAreaRetangulo);
+            groupBoxRetangulo.Controls.Add(radioButtonPerimetroRetangulo);
+            groupBoxRetangulo.Controls.Add(textBoxResultadoRetangulo);
             groupBoxRetangulo.Controls.Add(labelResultado);
             groupBoxRetangulo.Controls.Add(label3);
             groupBoxRetangulo.Controls.Add(labelAltura);
             groupBoxRetangulo.Controls.Add(labelLargura);
-            groupBoxRetangulo.Controls.Add(textBoxComprimento);
-            groupBoxRetangulo.Controls.Add(textBoxAltura);
-            groupBoxRetangulo.Controls.Add(textBoxLargura);
+            groupBoxRetangulo.Controls.Add(textBoxComprimentoRetangulo);
+            groupBoxRetangulo.Controls.Add(textBoxAlturaRetangulo);
+            groupBoxRetangulo.Controls.Add(textBoxLarguraRetangulo);
             groupBoxRetangulo.Location = new Point(12, 41);
             groupBoxRetangulo.Name = "groupBoxRetangulo";
             groupBoxRetangulo.Size = new Size(445, 154);
@@ -81,59 +88,59 @@
             groupBoxRetangulo.TabStop = false;
             groupBoxRetangulo.Visible = false;
             // 
-            // buttonCalcular
+            // buttonCalcularRetangulo
             // 
-            buttonCalcular.Location = new Point(364, 22);
-            buttonCalcular.Name = "buttonCalcular";
-            buttonCalcular.Size = new Size(75, 23);
-            buttonCalcular.TabIndex = 11;
-            buttonCalcular.Text = "Calcular";
-            buttonCalcular.UseVisualStyleBackColor = true;
-            buttonCalcular.Click += buttonCalcular_Click;
+            buttonCalcularRetangulo.Location = new Point(364, 22);
+            buttonCalcularRetangulo.Name = "buttonCalcularRetangulo";
+            buttonCalcularRetangulo.Size = new Size(75, 23);
+            buttonCalcularRetangulo.TabIndex = 11;
+            buttonCalcularRetangulo.Text = "Calcular";
+            buttonCalcularRetangulo.UseVisualStyleBackColor = true;
+            buttonCalcularRetangulo.Click += buttonCalcular_Click;
             // 
-            // radioButtonVolume
+            // radioButtonVolumeRetangulo
             // 
-            radioButtonVolume.AutoSize = true;
-            radioButtonVolume.Location = new Point(230, 79);
-            radioButtonVolume.Name = "radioButtonVolume";
-            radioButtonVolume.Size = new Size(65, 19);
-            radioButtonVolume.TabIndex = 10;
-            radioButtonVolume.TabStop = true;
-            radioButtonVolume.Text = "Volume";
-            radioButtonVolume.UseVisualStyleBackColor = true;
-            radioButtonVolume.CheckedChanged += radioButtonVolume_CheckedChanged;
+            radioButtonVolumeRetangulo.AutoSize = true;
+            radioButtonVolumeRetangulo.Location = new Point(230, 73);
+            radioButtonVolumeRetangulo.Name = "radioButtonVolumeRetangulo";
+            radioButtonVolumeRetangulo.Size = new Size(65, 19);
+            radioButtonVolumeRetangulo.TabIndex = 10;
+            radioButtonVolumeRetangulo.TabStop = true;
+            radioButtonVolumeRetangulo.Text = "Volume";
+            radioButtonVolumeRetangulo.UseVisualStyleBackColor = true;
+            radioButtonVolumeRetangulo.CheckedChanged += radioButtonVolume_CheckedChanged;
             // 
-            // radioButtonArea
+            // radioButtonAreaRetangulo
             // 
-            radioButtonArea.AutoSize = true;
-            radioButtonArea.Location = new Point(230, 50);
-            radioButtonArea.Name = "radioButtonArea";
-            radioButtonArea.Size = new Size(49, 19);
-            radioButtonArea.TabIndex = 9;
-            radioButtonArea.TabStop = true;
-            radioButtonArea.Text = "Area";
-            radioButtonArea.UseVisualStyleBackColor = true;
-            radioButtonArea.CheckedChanged += radioButtonArea_CheckedChanged;
+            radioButtonAreaRetangulo.AutoSize = true;
+            radioButtonAreaRetangulo.Location = new Point(230, 48);
+            radioButtonAreaRetangulo.Name = "radioButtonAreaRetangulo";
+            radioButtonAreaRetangulo.Size = new Size(49, 19);
+            radioButtonAreaRetangulo.TabIndex = 9;
+            radioButtonAreaRetangulo.TabStop = true;
+            radioButtonAreaRetangulo.Text = "Area";
+            radioButtonAreaRetangulo.UseVisualStyleBackColor = true;
+            radioButtonAreaRetangulo.CheckedChanged += radioButtonArea_CheckedChanged;
             // 
-            // radioButtonPerimetro
+            // radioButtonPerimetroRetangulo
             // 
-            radioButtonPerimetro.AutoSize = true;
-            radioButtonPerimetro.Location = new Point(230, 23);
-            radioButtonPerimetro.Name = "radioButtonPerimetro";
-            radioButtonPerimetro.Size = new Size(77, 19);
-            radioButtonPerimetro.TabIndex = 8;
-            radioButtonPerimetro.TabStop = true;
-            radioButtonPerimetro.Text = "Perimetro";
-            radioButtonPerimetro.UseVisualStyleBackColor = true;
-            radioButtonPerimetro.CheckedChanged += radioButtonPerimetro_CheckedChanged;
+            radioButtonPerimetroRetangulo.AutoSize = true;
+            radioButtonPerimetroRetangulo.Location = new Point(230, 23);
+            radioButtonPerimetroRetangulo.Name = "radioButtonPerimetroRetangulo";
+            radioButtonPerimetroRetangulo.Size = new Size(77, 19);
+            radioButtonPerimetroRetangulo.TabIndex = 8;
+            radioButtonPerimetroRetangulo.TabStop = true;
+            radioButtonPerimetroRetangulo.Text = "Perimetro";
+            radioButtonPerimetroRetangulo.UseVisualStyleBackColor = true;
+            radioButtonPerimetroRetangulo.CheckedChanged += radioButtonPerimetro_CheckedChanged;
             // 
-            // textBoxResultado
+            // textBoxResultadoRetangulo
             // 
-            textBoxResultado.Location = new Point(97, 109);
-            textBoxResultado.Name = "textBoxResultado";
-            textBoxResultado.ReadOnly = true;
-            textBoxResultado.Size = new Size(100, 23);
-            textBoxResultado.TabIndex = 7;
+            textBoxResultadoRetangulo.Location = new Point(97, 109);
+            textBoxResultadoRetangulo.Name = "textBoxResultadoRetangulo";
+            textBoxResultadoRetangulo.ReadOnly = true;
+            textBoxResultadoRetangulo.Size = new Size(100, 23);
+            textBoxResultadoRetangulo.TabIndex = 7;
             // 
             // labelResultado
             // 
@@ -171,32 +178,125 @@
             labelLargura.TabIndex = 3;
             labelLargura.Text = "Largura:";
             // 
-            // textBoxComprimento
+            // textBoxComprimentoRetangulo
             // 
-            textBoxComprimento.Enabled = false;
-            textBoxComprimento.Location = new Point(97, 80);
-            textBoxComprimento.Name = "textBoxComprimento";
-            textBoxComprimento.Size = new Size(100, 23);
-            textBoxComprimento.TabIndex = 2;
+            textBoxComprimentoRetangulo.Enabled = false;
+            textBoxComprimentoRetangulo.Location = new Point(97, 80);
+            textBoxComprimentoRetangulo.Name = "textBoxComprimentoRetangulo";
+            textBoxComprimentoRetangulo.Size = new Size(100, 23);
+            textBoxComprimentoRetangulo.TabIndex = 2;
             // 
-            // textBoxAltura
+            // textBoxAlturaRetangulo
             // 
-            textBoxAltura.Location = new Point(97, 51);
-            textBoxAltura.Name = "textBoxAltura";
-            textBoxAltura.Size = new Size(100, 23);
-            textBoxAltura.TabIndex = 1;
+            textBoxAlturaRetangulo.Location = new Point(97, 51);
+            textBoxAlturaRetangulo.Name = "textBoxAlturaRetangulo";
+            textBoxAlturaRetangulo.Size = new Size(100, 23);
+            textBoxAlturaRetangulo.TabIndex = 1;
             // 
-            // textBoxLargura
+            // textBoxLarguraRetangulo
             // 
-            textBoxLargura.Location = new Point(97, 22);
-            textBoxLargura.Name = "textBoxLargura";
-            textBoxLargura.Size = new Size(100, 23);
-            textBoxLargura.TabIndex = 0;
+            textBoxLarguraRetangulo.Location = new Point(97, 22);
+            textBoxLarguraRetangulo.Name = "textBoxLarguraRetangulo";
+            textBoxLarguraRetangulo.Size = new Size(100, 23);
+            textBoxLarguraRetangulo.TabIndex = 0;
+            // 
+            // groupBoxQuadrado
+            // 
+            groupBoxQuadrado.Controls.Add(buttonCalcularQuadrado);
+            groupBoxQuadrado.Controls.Add(radioButtonVolumeQuadrado);
+            groupBoxQuadrado.Controls.Add(radioButtonAreaQuadrado);
+            groupBoxQuadrado.Controls.Add(radioButtonPerimetroQuadrado);
+            groupBoxQuadrado.Controls.Add(textBoxResultadoQuadrado);
+            groupBoxQuadrado.Controls.Add(label1);
+            groupBoxQuadrado.Controls.Add(label5);
+            groupBoxQuadrado.Controls.Add(textBoxLadoQuadrado);
+            groupBoxQuadrado.Location = new Point(463, 41);
+            groupBoxQuadrado.Name = "groupBoxQuadrado";
+            groupBoxQuadrado.Size = new Size(445, 154);
+            groupBoxQuadrado.TabIndex = 12;
+            groupBoxQuadrado.TabStop = false;
+            groupBoxQuadrado.Visible = false;
+            // 
+            // buttonCalcularQuadrado
+            // 
+            buttonCalcularQuadrado.Location = new Point(364, 22);
+            buttonCalcularQuadrado.Name = "buttonCalcularQuadrado";
+            buttonCalcularQuadrado.Size = new Size(75, 23);
+            buttonCalcularQuadrado.TabIndex = 11;
+            buttonCalcularQuadrado.Text = "Calcular";
+            buttonCalcularQuadrado.UseVisualStyleBackColor = true;
+            buttonCalcularQuadrado.Click += buttonCalcularQuadrado_Click;
+            // 
+            // radioButtonVolumeQuadrado
+            // 
+            radioButtonVolumeQuadrado.AutoSize = true;
+            radioButtonVolumeQuadrado.Location = new Point(230, 73);
+            radioButtonVolumeQuadrado.Name = "radioButtonVolumeQuadrado";
+            radioButtonVolumeQuadrado.Size = new Size(65, 19);
+            radioButtonVolumeQuadrado.TabIndex = 10;
+            radioButtonVolumeQuadrado.TabStop = true;
+            radioButtonVolumeQuadrado.Text = "Volume";
+            radioButtonVolumeQuadrado.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAreaQuadrado
+            // 
+            radioButtonAreaQuadrado.AutoSize = true;
+            radioButtonAreaQuadrado.Location = new Point(230, 48);
+            radioButtonAreaQuadrado.Name = "radioButtonAreaQuadrado";
+            radioButtonAreaQuadrado.Size = new Size(49, 19);
+            radioButtonAreaQuadrado.TabIndex = 9;
+            radioButtonAreaQuadrado.TabStop = true;
+            radioButtonAreaQuadrado.Text = "Area";
+            radioButtonAreaQuadrado.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPerimetroQuadrado
+            // 
+            radioButtonPerimetroQuadrado.AutoSize = true;
+            radioButtonPerimetroQuadrado.Location = new Point(230, 23);
+            radioButtonPerimetroQuadrado.Name = "radioButtonPerimetroQuadrado";
+            radioButtonPerimetroQuadrado.Size = new Size(77, 19);
+            radioButtonPerimetroQuadrado.TabIndex = 8;
+            radioButtonPerimetroQuadrado.TabStop = true;
+            radioButtonPerimetroQuadrado.Text = "Perimetro";
+            radioButtonPerimetroQuadrado.UseVisualStyleBackColor = true;
+            // 
+            // textBoxResultadoQuadrado
+            // 
+            textBoxResultadoQuadrado.Location = new Point(97, 51);
+            textBoxResultadoQuadrado.Name = "textBoxResultadoQuadrado";
+            textBoxResultadoQuadrado.ReadOnly = true;
+            textBoxResultadoQuadrado.Size = new Size(100, 23);
+            textBoxResultadoQuadrado.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 54);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Resultado:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 25);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 15);
+            label5.TabIndex = 3;
+            label5.Text = "Lado:";
+            // 
+            // textBoxLadoQuadrado
+            // 
+            textBoxLadoQuadrado.Location = new Point(97, 22);
+            textBoxLadoQuadrado.Name = "textBoxLadoQuadrado";
+            textBoxLadoQuadrado.Size = new Size(100, 23);
+            textBoxLadoQuadrado.TabIndex = 0;
             // 
             // comboBoxOpcao
             // 
             comboBoxOpcao.FormattingEnabled = true;
-            comboBoxOpcao.Items.AddRange(new object[] { "Quadrado", "Retangulo" });
+            comboBoxOpcao.Items.AddRange(new object[] { "Quadrado", "Retangulo", "Circulo" });
             comboBoxOpcao.Location = new Point(12, 12);
             comboBoxOpcao.Name = "comboBoxOpcao";
             comboBoxOpcao.Size = new Size(121, 23);
@@ -212,149 +312,128 @@
             labelErro.Size = new Size(0, 15);
             labelErro.TabIndex = 2;
             // 
-            // groupBoxQuadrado
+            // groupBoxCirculo
             // 
-            groupBoxQuadrado.Controls.Add(button1);
-            groupBoxQuadrado.Controls.Add(radioButton1);
-            groupBoxQuadrado.Controls.Add(radioButton2);
-            groupBoxQuadrado.Controls.Add(radioButton3);
-            groupBoxQuadrado.Controls.Add(textBox1);
-            groupBoxQuadrado.Controls.Add(label1);
-            groupBoxQuadrado.Controls.Add(label2);
-            groupBoxQuadrado.Controls.Add(label4);
-            groupBoxQuadrado.Controls.Add(label5);
-            groupBoxQuadrado.Controls.Add(textBox2);
-            groupBoxQuadrado.Controls.Add(textBox3);
-            groupBoxQuadrado.Controls.Add(textBox4);
-            groupBoxQuadrado.Location = new Point(12, 221);
-            groupBoxQuadrado.Name = "groupBoxQuadrado";
-            groupBoxQuadrado.Size = new Size(445, 154);
-            groupBoxQuadrado.TabIndex = 12;
-            groupBoxQuadrado.TabStop = false;
-            groupBoxQuadrado.Visible = false;
+            groupBoxCirculo.Controls.Add(textBoxResultadoCirculo);
+            groupBoxCirculo.Controls.Add(labelResultadoCirculo);
+            groupBoxCirculo.Controls.Add(buttonCalcularCirculo);
+            groupBoxCirculo.Controls.Add(radioButtonVolume);
+            groupBoxCirculo.Controls.Add(radioButtonArea);
+            groupBoxCirculo.Controls.Add(radioButtonPerimetro);
+            groupBoxCirculo.Controls.Add(radioButtonDiametro);
+            groupBoxCirculo.Controls.Add(label8);
+            groupBoxCirculo.Controls.Add(textBoxRaio);
+            groupBoxCirculo.Location = new Point(12, 201);
+            groupBoxCirculo.Name = "groupBoxCirculo";
+            groupBoxCirculo.Size = new Size(445, 145);
+            groupBoxCirculo.TabIndex = 17;
+            groupBoxCirculo.TabStop = false;
+            groupBoxCirculo.Visible = false;
             // 
-            // button1
+            // textBoxResultadoCirculo
             // 
-            button1.Location = new Point(364, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 11;
-            button1.Text = "Calcular";
-            button1.UseVisualStyleBackColor = true;
+            textBoxResultadoCirculo.Location = new Point(97, 51);
+            textBoxResultadoCirculo.Name = "textBoxResultadoCirculo";
+            textBoxResultadoCirculo.Size = new Size(100, 23);
+            textBoxResultadoCirculo.TabIndex = 25;
             // 
-            // radioButton1
+            // labelResultadoCirculo
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(230, 79);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(65, 19);
-            radioButton1.TabIndex = 10;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Volume";
-            radioButton1.UseVisualStyleBackColor = true;
+            labelResultadoCirculo.AutoSize = true;
+            labelResultadoCirculo.Location = new Point(6, 54);
+            labelResultadoCirculo.Name = "labelResultadoCirculo";
+            labelResultadoCirculo.Size = new Size(62, 15);
+            labelResultadoCirculo.TabIndex = 24;
+            labelResultadoCirculo.Text = "Resultado:";
             // 
-            // radioButton2
+            // buttonCalcularCirculo
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(230, 50);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(49, 19);
-            radioButton2.TabIndex = 9;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Area";
-            radioButton2.UseVisualStyleBackColor = true;
+            buttonCalcularCirculo.Location = new Point(364, 22);
+            buttonCalcularCirculo.Name = "buttonCalcularCirculo";
+            buttonCalcularCirculo.Size = new Size(75, 23);
+            buttonCalcularCirculo.TabIndex = 18;
+            buttonCalcularCirculo.Text = "Calcular";
+            buttonCalcularCirculo.UseVisualStyleBackColor = true;
+            buttonCalcularCirculo.Click += buttonCalcularCirculo_Click;
             // 
-            // radioButton3
+            // radioButtonVolume
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(230, 23);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(77, 19);
-            radioButton3.TabIndex = 8;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Perimetro";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioButtonVolume.AutoSize = true;
+            radioButtonVolume.Location = new Point(230, 98);
+            radioButtonVolume.Name = "radioButtonVolume";
+            radioButtonVolume.Size = new Size(65, 19);
+            radioButtonVolume.TabIndex = 23;
+            radioButtonVolume.TabStop = true;
+            radioButtonVolume.Text = "Volume";
+            radioButtonVolume.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // radioButtonArea
             // 
-            textBox1.Location = new Point(97, 109);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 7;
+            radioButtonArea.AutoSize = true;
+            radioButtonArea.Location = new Point(230, 73);
+            radioButtonArea.Name = "radioButtonArea";
+            radioButtonArea.Size = new Size(49, 19);
+            radioButtonArea.TabIndex = 22;
+            radioButtonArea.TabStop = true;
+            radioButtonArea.Text = "Area";
+            radioButtonArea.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // radioButtonPerimetro
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(62, 15);
-            label1.TabIndex = 6;
-            label1.Text = "Resultado:";
+            radioButtonPerimetro.AutoSize = true;
+            radioButtonPerimetro.Location = new Point(230, 48);
+            radioButtonPerimetro.Name = "radioButtonPerimetro";
+            radioButtonPerimetro.Size = new Size(77, 19);
+            radioButtonPerimetro.TabIndex = 21;
+            radioButtonPerimetro.TabStop = true;
+            radioButtonPerimetro.Text = "Perimetro";
+            radioButtonPerimetro.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // radioButtonDiametro
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 83);
-            label2.Name = "label2";
-            label2.Size = new Size(85, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Comprimento:";
+            radioButtonDiametro.AutoSize = true;
+            radioButtonDiametro.Location = new Point(230, 23);
+            radioButtonDiametro.Name = "radioButtonDiametro";
+            radioButtonDiametro.Size = new Size(74, 19);
+            radioButtonDiametro.TabIndex = 20;
+            radioButtonDiametro.TabStop = true;
+            radioButtonDiametro.Text = "Diametro";
+            radioButtonDiametro.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // label8
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 54);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Altura:";
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 25);
+            label8.Name = "label8";
+            label8.Size = new Size(33, 15);
+            label8.TabIndex = 18;
+            label8.Text = "Raio:";
             // 
-            // label5
+            // textBoxRaio
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 25);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 15);
-            label5.TabIndex = 3;
-            label5.Text = "Largura:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(97, 80);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(97, 51);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(97, 22);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 0;
+            textBoxRaio.Location = new Point(97, 22);
+            textBoxRaio.Name = "textBoxRaio";
+            textBoxRaio.Size = new Size(100, 23);
+            textBoxRaio.TabIndex = 19;
             // 
             // NovoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(groupBoxQuadrado);
+            ClientSize = new Size(955, 450);
+            Controls.Add(groupBoxCirculo);
             Controls.Add(labelErro);
             Controls.Add(comboBoxOpcao);
             Controls.Add(groupBoxRetangulo);
+            Controls.Add(groupBoxQuadrado);
             Name = "NovoForm";
             Text = "NovoForm";
             groupBoxRetangulo.ResumeLayout(false);
             groupBoxRetangulo.PerformLayout();
             groupBoxQuadrado.ResumeLayout(false);
             groupBoxQuadrado.PerformLayout();
+            groupBoxCirculo.ResumeLayout(false);
+            groupBoxCirculo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,27 +445,33 @@
         private Label label3;
         private Label labelAltura;
         private Label labelLargura;
-        private TextBox textBoxComprimento;
-        private TextBox textBoxAltura;
-        private TextBox textBoxLargura;
-        private Button buttonCalcular;
+        private TextBox textBoxComprimentoRetangulo;
+        private TextBox textBoxAlturaRetangulo;
+        private TextBox textBoxLarguraRetangulo;
+        private Button buttonCalcularRetangulo;
+        private RadioButton radioButtonVolumeRetangulo;
+        private RadioButton radioButtonAreaRetangulo;
+        private RadioButton radioButtonPerimetroRetangulo;
+        private TextBox textBoxResultadoRetangulo;
+        private Label labelResultado;
+        private GroupBox groupBoxQuadrado;
+        private Button buttonCalcularQuadrado;
+        private RadioButton radioButtonVolumeQuadrado;
+        private RadioButton radioButtonAreaQuadrado;
+        private RadioButton radioButtonPerimetroQuadrado;
+        private TextBox textBoxResultadoQuadrado;
+        private Label label1;
+        private Label label5;
+        private TextBox textBoxLadoQuadrado;
+        private GroupBox groupBoxCirculo;
         private RadioButton radioButtonVolume;
         private RadioButton radioButtonArea;
         private RadioButton radioButtonPerimetro;
-        private TextBox textBoxResultado;
-        private Label labelResultado;
-        private GroupBox groupBoxQuadrado;
-        private Button button1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private TextBox textBox1;
-        private Label label1;
-        private Label label2;
-        private Label label4;
-        private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private RadioButton radioButtonDiametro;
+        private Label label8;
+        private TextBox textBoxRaio;
+        private TextBox textBoxResultadoCirculo;
+        private Label labelResultadoCirculo;
+        private Button buttonCalcularCirculo;
     }
 }

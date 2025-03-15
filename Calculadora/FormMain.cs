@@ -104,7 +104,6 @@ namespace Calculadora
 
         private void radioButtonSoma_CheckedChanged(object sender, EventArgs e)
         {
-            textBoxNro1.Visible = true;
             labelOperacao.Text = "+";
         }
 
