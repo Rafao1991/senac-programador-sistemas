@@ -7,25 +7,37 @@
             InitializeComponent();
         }
 
+        // Funções de validação
+
+        // Recebe uma lista de RadioButtons e verifica se nenhum deles está selecionado
+        // Utiliza o método All da classe Enumerable para verificar se todos os elementos da lista retornam false
+        // Como paramentro para o metodo All, é passado uma função lambda que verifica se o RadioButton está selecionado
         private bool RadioNaoSelecionado(List<RadioButton> radios)
         {
             return radios.All(radio => !radio.Checked);
         }
 
+        // Função que verifica se o valor passado é inválido
+        // Verifica se o valor é nulo ou se contém algum caractere que não é um número
+        // Utiliza o método All da classe Enumerable para verificar se todos os caracteres da string são números
         private bool ValorInvalido(string valor)
         {
             return string.IsNullOrWhiteSpace(valor) || !valor.All(char.IsNumber);
         }
 
+        // Função que valida o formulário do quadrado
         private bool ValidarQuadrado()
         {
+            // Lista de RadioButtons que representam as operações possíveis
             List<RadioButton> radios = new List<RadioButton> { radioButtonPerimetroQuadrado, radioButtonAreaQuadrado, radioButtonVolumeQuadrado };
+            // Verifica se nenhuma operação foi selecionada
             if (RadioNaoSelecionado(radios))
             {
                 labelErro.Text = "Selecione uma operacao.";
                 return false;
             }
 
+            // Verifica se o valor do lado é inválido
             if (ValorInvalido(textBoxLadoQuadrado.Text))
             {
                 labelErro.Text = "Insira um lado valido.";
@@ -83,6 +95,9 @@
             return true;
         }
 
+        // Função que valida o formulário
+        // Verifica se a opção foi selecionada e chama a função de validação correspondente
+        // Retorna false se a validação falhar ou true se passar
         private bool ValidarForm()
         {
             labelErro.Text = "";
@@ -111,6 +126,11 @@
             return false;
         }
 
+        // Funções de eventos
+
+        // Evento que é chamado quando o valor do ComboBox é alterado
+        // Verifica qual opção foi selecionada e exibe o formulário correspondente
+        // Utiliza a propriedade Visible dos GroupBox para exibir ou ocultar os formulários
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxOpcao.SelectedItem == null)
@@ -144,21 +164,29 @@
             }
         }
 
+        // Evento que é chamado quando o RadioButton de perimetro é selecionado
+        // Desabilita o campo de comprimento
         private void radioButtonPerimetro_CheckedChanged(object sender, EventArgs e)
         {
             textBoxComprimentoRetangulo.Enabled = false;
         }
 
+        // Evento que é chamado quando o RadioButton de area é selecionado
+        // Desabilita o campo de comprimento
         private void radioButtonArea_CheckedChanged(object sender, EventArgs e)
         {
             textBoxComprimentoRetangulo.Enabled = false;
         }
 
+        // Evento que é chamado quando o RadioButton de volume é selecionado
+        // Habilita o campo de comprimento
         private void radioButtonVolume_CheckedChanged(object sender, EventArgs e)
         {
             textBoxComprimentoRetangulo.Enabled = true;
         }
 
+        // Evento que é chamado quando o botão de calcular retangulo é clicado
+        // Verifica se o formulário é válido e executa o cálculo correspondente
         private void buttonCalcular_Click(object sender, EventArgs e)
         {
             if (!ValidarForm())
@@ -195,6 +223,8 @@
             }
         }
 
+        // Evento que é chamado quando o botão de calcular quadrado é clicado
+        // Verifica se o formulário é válido e executa o cálculo correspondente
         private void buttonCalcularQuadrado_Click(object sender, EventArgs e)
         {
             if (!ValidarForm())
@@ -226,6 +256,8 @@
             }
         }
 
+        // Evento que é chamado quando o botão de calcular circulo é clicado
+        // Verifica se o formulário é válido e executa o cálculo correspondente
         private void buttonCalcularCirculo_Click(object sender, EventArgs e)
         {
             if (!ValidarForm())
