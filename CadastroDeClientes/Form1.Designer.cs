@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            listBoxClientes = new ListBox();
+            buttonCadastrar = new Button();
+            SuspendLayout();
+            // 
+            // listBoxClientes
+            // 
+            listBoxClientes.FormattingEnabled = true;
+            listBoxClientes.ItemHeight = 15;
+            listBoxClientes.Location = new Point(83, 77);
+            listBoxClientes.Name = "listBoxClientes";
+            listBoxClientes.Size = new Size(519, 94);
+            listBoxClientes.TabIndex = 0;
+            // 
+            // buttonCadastrar
+            // 
+            buttonCadastrar.Location = new Point(678, 102);
+            buttonCadastrar.Name = "buttonCadastrar";
+            buttonCadastrar.Size = new Size(75, 23);
+            buttonCadastrar.TabIndex = 1;
+            buttonCadastrar.Text = "cadastrar";
+            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonCadastrar);
+            Controls.Add(listBoxClientes);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ListBox listBoxClientes;
+        private Button buttonCadastrar;
     }
 }
