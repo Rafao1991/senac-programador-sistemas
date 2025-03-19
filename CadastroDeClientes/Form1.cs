@@ -8,36 +8,26 @@ namespace CadastroDeClientes
         {
             InitializeComponent();
 
-            Clientes.Add(new Cliente()
-            {
-                Id = 1,
-                Nome = "Rafael"
-            });
+            Endereco enderecoRafael = new Endereco() { Logradouro = "Endereco do Rafael", Numero = "10" };
+            Cliente rafael = new Cliente() { Id = 1, Nome = "Rafael Sousa", DataNascimento = "31/08/1991", Etnia = Etnia.OUTROS, Tipo = TipoCliente.PF, Endereco = enderecoRafael };
+            Clientes.Add(rafael);
 
-            Clientes.Add(new Cliente() {
-                Id = 2,
-                Nome = "João"
-            });
+            Endereco enderecoVanda = new Endereco() { Logradouro = "Endereco dos pais do Rafael", Numero = "301" };
+            Cliente vanda = new Cliente() { Id = 2, Nome = "Vanda Maria", DataNascimento = "08/03/1958", Etnia = Etnia.BRANCO, Tipo = TipoCliente.PF, Endereco = enderecoVanda };
+            Clientes.Add(vanda);
 
-            AtualizarLista();
+            Cliente joao = new Cliente() { Id = 3, Nome = "Joao Sousa", DataNascimento = "14/07/1962", Etnia = Etnia.NEGRO, Tipo = TipoCliente.PF, Endereco = enderecoVanda };
+            Clientes.Add(joao);
         }
 
-        private void AtualizarLista()
+        private void button1_Click(object sender, EventArgs e)
         {
-            listBoxClientes.DataSource = null;
-            listBoxClientes.DataSource = Clientes;
-            listBoxClientes.DisplayMember = "Nome";
-        }
-
-        private void buttonCadastrar_Click(object sender, EventArgs e)
-        {
-            Clientes.Add(new Cliente()
+            if (string.IsNullOrEmpty(textBoxLogradouro.Text))
             {
-                Id = 3,
-                Nome = "Maria"
-            });
-
-            AtualizarLista();
+                labelErro.Text = "deu erro";
+                textBoxLogradouro.Focus();
+                return;
+            }
         }
     }
 }
