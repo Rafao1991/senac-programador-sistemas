@@ -14,27 +14,5 @@ namespace CadastroDeClientes
         public TipoCliente Tipo { get; set; }
         public Endereco Endereco { get; set; }
         public Etnia Etnia { get; set; }
-
-        public bool Validar()
-        {
-            if (DataNascimento == null)
-            {
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(Endereco.Logradouro))
-            {
-                return false;
-            }
-
-            .
-            .
-            .
-            .
-            .
-            .
-            .
-
-            return true;
     }
 }

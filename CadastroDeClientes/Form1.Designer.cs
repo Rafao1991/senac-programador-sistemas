@@ -31,6 +31,9 @@
             maskedTextBox1 = new MaskedTextBox();
             checkBox1 = new CheckBox();
             button1 = new Button();
+            dataGridViewClientes = new DataGridView();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
             // maskedTextBox1
@@ -59,17 +62,45 @@
             button1.TabIndex = 2;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // dataGridViewClientes
+            // 
+            dataGridViewClientes.AllowUserToAddRows = false;
+            dataGridViewClientes.AllowUserToDeleteRows = false;
+            dataGridViewClientes.AllowUserToOrderColumns = true;
+            dataGridViewClientes.AllowUserToResizeRows = false;
+            dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClientes.Location = new Point(287, 12);
+            dataGridViewClientes.MultiSelect = false;
+            dataGridViewClientes.Name = "dataGridViewClientes";
+            dataGridViewClientes.ReadOnly = true;
+            dataGridViewClientes.Size = new Size(501, 426);
+            dataGridViewClientes.TabIndex = 3;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(206, 151);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 4;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(dataGridViewClientes);
             Controls.Add(button1);
             Controls.Add(checkBox1);
             Controls.Add(maskedTextBox1);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -79,5 +110,7 @@
         private MaskedTextBox maskedTextBox1;
         private CheckBox checkBox1;
         private Button button1;
+        private DataGridView dataGridViewClientes;
+        private Button button2;
     }
 }
