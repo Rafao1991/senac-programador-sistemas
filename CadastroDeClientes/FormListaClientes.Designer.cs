@@ -1,6 +1,6 @@
 ﻿namespace CadastroDeClientes
 {
-    partial class Form1
+    partial class FormListaClientes
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,6 +33,7 @@
             button1 = new Button();
             dataGridViewClientes = new DataGridView();
             button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
@@ -88,18 +89,29 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // Form1
+            // button3
+            // 
+            button3.Location = new Point(206, 180);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 5;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // FormListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridViewClientes);
             Controls.Add(button1);
             Controls.Add(checkBox1);
             Controls.Add(maskedTextBox1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "FormListaClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -112,5 +124,6 @@
         private Button button1;
         private DataGridView dataGridViewClientes;
         private Button button2;
+        private Button button3;
     }
 }

@@ -3,7 +3,6 @@ C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClie
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\bin\Debug\net8.0-windows\CadastroDeClientes.runtimeconfig.json
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\bin\Debug\net8.0-windows\CadastroDeClientes.dll
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\bin\Debug\net8.0-windows\CadastroDeClientes.pdb
-C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.Form1.resources
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.csproj.GenerateResource.cache
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.AssemblyInfoInputs.cache
@@ -15,3 +14,5 @@ C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClie
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.pdb
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.genruntimeconfig.cache
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\ref\CadastroDeClientes.dll
+C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.FormDetalheCliente.resources
+C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.FormListaClientes.resources
