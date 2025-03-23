@@ -8,12 +8,14 @@ namespace CadastroDeClientes
 {
     internal class Cliente
     {
-        public int Id { get; set; }
-        public string? Nome { get; set; }
+        public required int Id { get; set; }
+        public required string Nome { get; set; }
         public string? NomeSocial { get; set; }
-        public string? DataNascimento { get; set; }
-        public TipoCliente? Tipo { get; set; }
-        public Endereco? Endereco { get; set; }
-        public Etnia? Etnia { get; set; }
+        public required string DataNascimento { get; set; }
+        public required string Email { get; set; }
+        public required string Telefone { get; set; }
+        public required TipoCliente Tipo { get; set; }
+        public required Etnia Etnia { get; set; }
+        public required Endereco Endereco { get; set; }
     }
 }
