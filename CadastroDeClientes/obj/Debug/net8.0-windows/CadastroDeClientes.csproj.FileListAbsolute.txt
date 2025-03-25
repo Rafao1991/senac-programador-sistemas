@@ -14,7 +14,6 @@ C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClie
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.pdb
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.genruntimeconfig.cache
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\ref\CadastroDeClientes.dll
-C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.FormDetalheCliente.resources
 C:\Users\rafael.csvasousa\source\repos\senac-programador-sistemas\CadastroDeClientes\obj\Debug\net8.0-windows\CadastroDeClientes.FormListaClientes.resources
 C:\Users\rcsva\source\repos\senac-programador-sistemas\CadastroDeClientes\bin\Debug\net8.0-windows\CadastroDeClientes.exe
 C:\Users\rcsva\source\repos\senac-programador-sistemas\CadastroDeClientes\bin\Debug\net8.0-windows\CadastroDeClientes.deps.json
