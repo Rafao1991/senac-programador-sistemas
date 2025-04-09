@@ -1,3 +1,4 @@
 .project
 .vs
-**/obj/*
+
+**/obj/
