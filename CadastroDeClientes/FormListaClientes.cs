@@ -1,7 +1,11 @@
+using CadastroDeClientes.dominio;
+
 namespace CadastroDeClientes
 {
     public partial class FormListaClientes : Form
     {
+        private readonly Cliente Cliente = new();
+
         private readonly List<Cliente> Clientes = [];
         private readonly BindingSource BindingSource = [];
 
@@ -237,61 +241,7 @@ namespace CadastroDeClientes
 
             Enum.GetNames(typeof(Etnia)).ToList().ForEach(etnia => comboBoxEtnia.Items.Add(etnia));
 
-            Endereco enderecoRafael = new()
-            {
-                Logradouro = "Endereco do Rafael",
-                Numero = "10",
-                Bairro = "Bairro",
-                CEP = "00000-001"
-            };
-            Cliente rafael = new()
-            {
-                Id = GerarId(),
-                Nome = "Rafael Sousa",
-                DataNascimento = "31/08/1991",
-                Email = "rafael@email.com",
-                Telefone = "(11) 99999-9990",
-                Etnia = Etnia.OUTROS,
-                Tipo = TipoCliente.PF,
-                Endereco = enderecoRafael
-            };
-            Clientes.Add(rafael);
-
-            Endereco enderecoVanda = new()
-            {
-                Logradouro = "Endereco dos pais do Rafael",
-                Numero = "301",
-                Bairro = "Bairro",
-                CEP = "00000-001"
-            };
-            Cliente vanda = new()
-            {
-                Id = GerarId(),
-                Nome = "Vanda Maria",
-                DataNascimento = "08/03/1958",
-                Email = "vanda@email.com",
-                Telefone = "(11) 99999-9991",
-                Etnia = Etnia.BRANCO,
-                Tipo = TipoCliente.PF,
-                Endereco = enderecoVanda
-            };
-            Clientes.Add(vanda);
-
-            Cliente joao = new()
-            {
-                Id = GerarId(),
-                Nome = "Joao Sousa",
-                DataNascimento = "14/07/1962",
-                Email = "joao@email.com",
-                Telefone = "(11) 99999-9992",
-                Etnia = Etnia.NEGRO,
-                Tipo = TipoCliente.PF,
-                Endereco = enderecoVanda
-            };
-            Clientes.Add(joao);
-
-
-            BindingSource.DataSource = Clientes;
+            BindingSource.DataSource = Cliente.ListarClientes();
             dataGridViewClientes.DataSource = BindingSource;
         }
 
@@ -307,27 +257,27 @@ namespace CadastroDeClientes
                 return;
             }
 
-            Endereco novoEndereco = new()
-            {
-                Logradouro = textBoxLogradouro.Text,
-                Numero = textBoxNumero.Text,
-                Bairro = textBoxBairro.Text,
-                CEP = maskedTextBoxCEP.Text,
-            };
+            //Endereco novoEndereco = new()
+            //{
+            //    Logradouro = textBoxLogradouro.Text,
+            //    Numero = textBoxNumero.Text,
+            //    Bairro = textBoxBairro.Text,
+            //    CEP = maskedTextBoxCEP.Text,
+            //};
 
-            Cliente novoCliente = new()
-            {
-                Id = GerarId(),
-                Nome = textBoxNome.Text,
-                NomeSocial = textBoxNomeSocial.Text,
-                DataNascimento = maskedTextBoxDataNascimento.Text,
-                Email = textBoxEmail.Text,
-                Telefone = maskedTextBoxTelefone.Text,
-                Etnia = (Etnia)comboBoxEtnia.SelectedIndex,
-                Tipo = radioButtonPf.Checked ? TipoCliente.PF : TipoCliente.PJ,
-                Endereco = novoEndereco
-            };
-            Clientes.Add(novoCliente);
+            //Cliente novoCliente = new()
+            //{
+            //    Id = GerarId(),
+            //    Nome = textBoxNome.Text,
+            //    NomeSocial = textBoxNomeSocial.Text,
+            //    DataNascimento = maskedTextBoxDataNascimento.Text,
+            //    Email = textBoxEmail.Text,
+            //    Telefone = maskedTextBoxTelefone.Text,
+            //    Etnia = (Etnia)comboBoxEtnia.SelectedIndex,
+            //    Tipo = radioButtonPf.Checked ? TipoCliente.PF : TipoCliente.PJ,
+            //    Endereco = novoEndereco
+            //};
+            //Clientes.Add(novoCliente);
 
             BindingSource.ResetBindings(false);
 
@@ -343,11 +293,6 @@ namespace CadastroDeClientes
 
             Clientes.RemoveAt(dataGridViewClientes.SelectedRows[0].Index);
             BindingSource.ResetBindings(false);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
