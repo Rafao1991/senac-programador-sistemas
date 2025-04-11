@@ -4,7 +4,7 @@ namespace CadastroDeClientes.dominio
 {
     internal class Cliente
     {
-        private readonly ClienteRepositorio clienteRepositorio = new();
+        private readonly ClienteRepositorio ClienteRepositorio = new();
 
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -20,7 +20,12 @@ namespace CadastroDeClientes.dominio
 
         public List<Cliente> ListarClientes()
         {
-            return clienteRepositorio.ListarClientes();
+            return ClienteRepositorio.ListarClientes();
+        }
+
+        public void InserirCliente(Cliente novoCliente)
+        {
+            ClienteRepositorio.InserirCliente(novoCliente);
         }
     }
 }

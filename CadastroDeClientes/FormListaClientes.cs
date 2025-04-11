@@ -91,16 +91,6 @@ namespace CadastroDeClientes
                 return true;
             }
 
-            foreach (Cliente cliente in Clientes)
-            {
-                if (cliente.Email == textBoxEmail.Text)
-                {
-                    labelErro.Text = "O campo Email deve ser único";
-                    textBoxEmail.Focus();
-                    return true;
-                }
-            }
-
             labelErro.Text = "";
             return false;
         }
@@ -112,16 +102,6 @@ namespace CadastroDeClientes
                 labelErro.Text = "O campo Telefone é obrigatório";
                 maskedTextBoxTelefone.Focus();
                 return true;
-            }
-
-            foreach (Cliente cliente in Clientes)
-            {
-                if (cliente.Telefone == maskedTextBoxTelefone.Text)
-                {
-                    labelErro.Text = "O campo Telefone deve ser único";
-                    maskedTextBoxTelefone.Focus();
-                    return true;
-                }
             }
 
             labelErro.Text = "";
@@ -199,25 +179,6 @@ namespace CadastroDeClientes
             return false;
         }
 
-        private int GerarId()
-        {
-            if (Clientes.Count == 0)
-            {
-                return 1;
-            }
-
-            int novoId = 0;
-            foreach (Cliente cliente in Clientes)
-            {
-                if (cliente.Id > novoId)
-                {
-                    novoId = cliente.Id;
-                }
-            }
-
-            return novoId + 1;
-        }
-
         private void LimparForm()
         {
             textBoxNome.Clear();
@@ -240,6 +201,7 @@ namespace CadastroDeClientes
             labelErro.Text = "";
 
             Enum.GetNames(typeof(Etnia)).ToList().ForEach(etnia => comboBoxEtnia.Items.Add(etnia));
+            Enum.GetNames(typeof(Genero)).ToList().ForEach(genero => comboBoxGenero.Items.Add(genero));
 
             BindingSource.DataSource = Cliente.ListarClientes();
             dataGridViewClientes.DataSource = BindingSource;
@@ -257,29 +219,36 @@ namespace CadastroDeClientes
                 return;
             }
 
-            //Endereco novoEndereco = new()
-            //{
-            //    Logradouro = textBoxLogradouro.Text,
-            //    Numero = textBoxNumero.Text,
-            //    Bairro = textBoxBairro.Text,
-            //    CEP = maskedTextBoxCEP.Text,
-            //};
+            DateTime.TryParse(maskedTextBoxDataNascimento.Text, out DateTime dataNascimento);
 
-            //Cliente novoCliente = new()
-            //{
-            //    Id = GerarId(),
-            //    Nome = textBoxNome.Text,
-            //    NomeSocial = textBoxNomeSocial.Text,
-            //    DataNascimento = maskedTextBoxDataNascimento.Text,
-            //    Email = textBoxEmail.Text,
-            //    Telefone = maskedTextBoxTelefone.Text,
-            //    Etnia = (Etnia)comboBoxEtnia.SelectedIndex,
-            //    Tipo = radioButtonPf.Checked ? TipoCliente.PF : TipoCliente.PJ,
-            //    Endereco = novoEndereco
-            //};
-            //Clientes.Add(novoCliente);
+            Endereco novoEndereco = new()
+            {
+                Logradouro = textBoxLogradouro.Text,
+                Numero = textBoxNumero.Text,
+                Bairro = textBoxBairro.Text,
+                CEP = maskedTextBoxCEP.Text.Replace("-", ""),
+                Municipio = textBoxMunicipio.Text,
+                Estado = textBoxEstado.Text,
+                Complemento = textBoxComplemento.Text,
+            };
 
-            BindingSource.ResetBindings(false);
+            Cliente novoCliente = new()
+            {
+                Nome = textBoxNome.Text,
+                NomeSocial = textBoxNomeSocial.Text,
+                DataNascimento = dataNascimento,
+                Email = textBoxEmail.Text,
+                Telefone = maskedTextBoxTelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", ""),
+                Etnia = (Etnia)comboBoxEtnia.SelectedIndex,
+                Genero = (Genero)comboBoxGenero.SelectedIndex,
+                Tipo = radioButtonPf.Checked ? TipoCliente.PF : TipoCliente.PJ,
+                Estrangeiro = checkBoxEstrangeiro.Checked,
+                Endereco = novoEndereco
+            };
+
+            novoCliente.InserirCliente(novoCliente);
+            BindingSource.DataSource = Cliente.ListarClientes();
+            dataGridViewClientes.DataSource = BindingSource;
 
             LimparForm();
         }
@@ -293,6 +262,11 @@ namespace CadastroDeClientes
 
             Clientes.RemoveAt(dataGridViewClientes.SelectedRows[0].Index);
             BindingSource.ResetBindings(false);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
