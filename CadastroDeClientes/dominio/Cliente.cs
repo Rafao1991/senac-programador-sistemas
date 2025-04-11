@@ -27,5 +27,15 @@ namespace CadastroDeClientes.dominio
         {
             ClienteRepositorio.InserirCliente(novoCliente);
         }
+
+        public Cliente BuscarClientePorId(int id)
+        {
+            return ClienteRepositorio.BuscarClientePorId(id);
+        }
+
+        public void DeletarCliente(int id)
+        {
+            ClienteRepositorio.DeletarCliente(id);
+        }
     }
 }

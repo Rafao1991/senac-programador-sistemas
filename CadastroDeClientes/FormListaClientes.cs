@@ -1,4 +1,7 @@
 using CadastroDeClientes.dominio;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Runtime.ConstrainedExecution;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CadastroDeClientes
 {
@@ -260,12 +263,43 @@ namespace CadastroDeClientes
                 return;
             }
 
-            Clientes.RemoveAt(dataGridViewClientes.SelectedRows[0].Index);
-            BindingSource.ResetBindings(false);
+            int id = (int)dataGridViewClientes.SelectedRows[0].Cells[0].Value;
+
+            Cliente.DeletarCliente(id);
+
+            BindingSource.DataSource = Cliente.ListarClientes();
+            dataGridViewClientes.DataSource = BindingSource;
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void buttonEditar_Click(object sender, EventArgs e)
         {
+            if (dataGridViewClientes.SelectedRows.Count == 0 || dataGridViewClientes.SelectedRows[0].Index < 0)
+            {
+                return;
+            }
+
+            int id = (int)dataGridViewClientes.SelectedRows[0].Cells[0].Value;
+
+            var cliente = Cliente.BuscarClientePorId(id);
+
+            textBoxLogradouro.Text = cliente.Endereco.Logradouro;
+            textBoxNumero.Text = cliente.Endereco.Numero;
+            textBoxBairro.Text = cliente.Endereco.Numero;
+            maskedTextBoxCEP.Text = cliente.Endereco.CEP;
+            textBoxMunicipio.Text = cliente.Endereco.Municipio;
+            textBoxEstado.Text = cliente.Endereco.Estado;
+            textBoxComplemento.Text = cliente.Endereco.Complemento;
+
+            textBoxNome.Text = cliente.Nome;
+            textBoxNomeSocial.Text = cliente.NomeSocial;
+            maskedTextBoxDataNascimento.Text = cliente.DataNascimento.ToString();
+            textBoxEmail.Text = cliente.Email;
+            maskedTextBoxTelefone.Text = cliente.Telefone;
+            comboBoxEtnia.SelectedIndex = (int) cliente.Etnia;
+            comboBoxGenero.SelectedIndex = (int) cliente.Genero;
+            radioButtonPf.Checked = cliente.Tipo == TipoCliente.PF;
+            radioButtonPj.Checked = cliente.Tipo == TipoCliente.PJ;
+            checkBoxEstrangeiro.Checked = cliente.Estrangeiro;
 
         }
     }

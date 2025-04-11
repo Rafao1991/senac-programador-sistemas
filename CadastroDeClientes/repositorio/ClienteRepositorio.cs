@@ -10,13 +10,13 @@ namespace CadastroDeClientes.repositorio
         public List<Cliente> ListarClientes()
         {
             var clientes = new List<Cliente>();
-            
+
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
 
                 string query = "SELECT c.*, e.logradouro, e.numero, e.complemento, e.bairro, e.municipio, e.estado, e.cep FROM cliente c JOIN endereco e ON c.id_endereco = e.id;";
-                
+
                 using var cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -32,9 +32,9 @@ namespace CadastroDeClientes.repositorio
                         DataNascimento = reader.GetDateTime("data_nascimento"),
                         Email = reader.GetString("email"),
                         Telefone = reader.GetString("telefone"),
-                        Tipo = (TipoCliente) reader.GetInt32("tipo"),
-                        Etnia = (Etnia) reader.GetInt32("etnia"),
-                        Genero = (Genero) reader.GetInt32("genero"),
+                        Tipo = (TipoCliente)reader.GetInt32("tipo"),
+                        Etnia = (Etnia)reader.GetInt32("etnia"),
+                        Genero = (Genero)reader.GetInt32("genero"),
                         Estrangeiro = reader.GetBoolean("estrangeiro"),
                         Endereco = new Endereco
                         {
@@ -52,6 +52,51 @@ namespace CadastroDeClientes.repositorio
             }
 
             return clientes;
+        }
+
+        public Cliente BuscarClientePorId(int id)
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT c.*, e.logradouro, e.numero, e.complemento, e.bairro, e.municipio, e.estado, e.cep FROM cliente c JOIN endereco e ON c.id_endereco = e.id WHERE c.id = @id;";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using var reader = cmd.ExecuteReader();
+                    reader.Read();
+
+                    var nomeSocial = !reader.IsDBNull("nome_social") ? reader.GetString("nome_social") : "";
+                    var complemento = !reader.IsDBNull("complemento") ? reader.GetString("complemento") : "";
+
+                    return new Cliente
+                    {
+                        Id = reader.GetInt32("id"),
+                        Nome = reader.GetString("nome"),
+                        NomeSocial = nomeSocial,
+                        DataNascimento = reader.GetDateTime("data_nascimento"),
+                        Email = reader.GetString("email"),
+                        Telefone = reader.GetString("telefone"),
+                        Tipo = (TipoCliente)reader.GetInt32("tipo"),
+                        Etnia = (Etnia)reader.GetInt32("etnia"),
+                        Genero = (Genero)reader.GetInt32("genero"),
+                        Estrangeiro = reader.GetBoolean("estrangeiro"),
+                        Endereco = new Endereco
+                        {
+                            Id = reader.GetInt32("id_endereco"),
+                            Logradouro = reader.GetString("logradouro"),
+                            Numero = reader.GetString("numero"),
+                            Complemento = complemento,
+                            Bairro = reader.GetString("bairro"),
+                            Municipio = reader.GetString("municipio"),
+                            Estado = reader.GetString("estado"),
+                            CEP = reader.GetString("cep")
+                        }
+                    };
+                }
+            }
         }
 
         public void InserirCliente(Cliente novoCliente)
@@ -134,18 +179,20 @@ namespace CadastroDeClientes.repositorio
         //    }
         //}
 
-        //public void DeleteCliente(int id)
-        //{
-        //    using (var conn = Database.GetConnection())
-        //    {
-        //        conn.Open();
-        //        string query = "DELETE FROM clients WHERE id=@id";
-        //        using (var cmd = new MySqlCommand(query, conn))
-        //        {
-        //            cmd.Parameters.AddWithValue("@id", id);
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //    }
-        //}
+        public void DeletarCliente(int id)
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+
+                string query = "DELETE FROM cliente WHERE id = @id;";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

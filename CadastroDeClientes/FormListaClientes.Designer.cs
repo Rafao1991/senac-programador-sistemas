@@ -65,6 +65,7 @@
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
+            buttonEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
@@ -406,7 +407,6 @@
             label14.Size = new Size(84, 15);
             label14.TabIndex = 1007;
             label14.Text = "Complemento";
-            label14.Click += label14_Click;
             // 
             // label15
             // 
@@ -428,11 +428,22 @@
             label16.TabIndex = 1009;
             label16.Text = "Municipio";
             // 
+            // buttonEditar
+            // 
+            buttonEditar.Location = new Point(602, 527);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(75, 23);
+            buttonEditar.TabIndex = 1010;
+            buttonEditar.Text = "Editar";
+            buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
+            // 
             // FormListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1329, 614);
+            Controls.Add(buttonEditar);
             Controls.Add(textBoxEstado);
             Controls.Add(textBoxComplemento);
             Controls.Add(textBoxMunicipio);
@@ -516,5 +527,6 @@
         private Label label14;
         private Label label15;
         private Label label16;
+        private Button buttonEditar;
     }
 }
